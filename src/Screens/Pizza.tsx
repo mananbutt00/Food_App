@@ -6,7 +6,7 @@ import ItemScreen from './TopTabNavigation/ItemScreen';
 import NewItemScreen from './TopTabNavigation/NewItemScreen';
 import Recomended from './TopTabNavigation/Recomended';
 import Special from './TopTabNavigation/Special';
-import Pizzaallitem from './TopTabNavigation/PizzaScreen/Pizzaallitem';
+import Pizzaallitem from './DrawerScreens/LogoutScreen';
 function Pizza() {
     return (
 

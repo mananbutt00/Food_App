@@ -85,13 +85,17 @@ const styles = StyleSheet.create({
   },
   itemText: {
     marginVertical: 10,
-    marginHorizontal: 13,
+   left:10,
     fontFamily: 'lora',
     flex: 1,
+    marginBottom:40,
+    flexDirection:'row'
   },
   itemImage: {
     marginHorizontal: 50,
     marginVertical: 30,
+    marginRight:100,
+    top:20
   },
 });
 

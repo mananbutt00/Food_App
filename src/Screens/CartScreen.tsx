@@ -12,7 +12,9 @@ function CartScreen() {
                 </View>
 
                 <View style={styles.imageRow}>
-                    <Image source={require('../Images/Group15.png')} />
+                    <Image source={require('../Images/paris.png')} 
+                    style={{height:25,width:150}}
+                    />
                     <Image source={require('../Images/shoppingcart.png')} />
                 </View>
 
@@ -23,9 +25,12 @@ function CartScreen() {
                         <Text style={styles.name}>Star Fish</Text>
                         <Text style={styles.name}>25 Feb 2022  20:30</Text>
                         </View>
-                        <Image source={require('../Images/Group17.png')} />
+                        <Image source={require('../Images/Group17.png')} 
+                        style={{height:20,width:80}}/>
                     </View>
-                    <Image source={require('../Images/Group22.png')} />
+                    <Image source={require('../Images/Group22.png')} 
+                    style={{height:80,width:"100%",left:10}}
+                    />
                     <View style={styles.cartItemRow}>
                         <TouchableOpacity>
                         <Image source={require('../Images/Group20.png')} />
@@ -35,7 +40,7 @@ function CartScreen() {
                         </TouchableOpacity>
                     </View>
                 </View>
-
+<View style={{bottom:25}}>
                 <View style={styles.cartItemContainer}>
                     <View style={styles.cartItemRow}>
                         <Image source={require('../Images/Rectangle42.png')} />
@@ -43,9 +48,13 @@ function CartScreen() {
                         <Text style={styles.name}>Boston </Text>
                         <Text style={styles.name}>Burgers </Text>
                         </View>
-                        <Image source={require('../Images/Group18.png')} />
+                        <Image source={require('../Images/Group17.png')} 
+                     style={{height:20,width:80}}/>
+                     
                     </View>
-                    <Image source={require('../Images/Group23.png')} />
+                    <Image source={require('../Images/Group22.png')} 
+                     style={{height:80,width:"100%",left:10}}
+                    />
                     <View style={styles.cartItemRow}>
                         <TouchableOpacity>
                         <Image source={require('../Images/Group21.png')} />
@@ -53,6 +62,7 @@ function CartScreen() {
                         <TouchableOpacity>
                         <Image source={require('../Images/Rate.png')} />
                         </TouchableOpacity>
+                    </View>
                     </View>
                 </View>
                 
@@ -65,6 +75,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 15,
         flex: 1,
+        marginBottom:20
     },
     previousOrderButton: {
         flexDirection: 'row',
@@ -84,6 +95,7 @@ const styles = StyleSheet.create({
         color: Colors.black,
         fontSize: 18,
         fontFamily: 'lora',
+        fontWeight:'700'
     },
     imageRow: {
         flexDirection: 'row',
@@ -94,6 +106,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         backgroundColor:  Colors.white,
         shadowColor: '#000',
+        
         flex: 0.5,
         padding: 20,
         shadowOffset: {

@@ -1,17 +1,21 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
-// create a component
+import Colors from '../../Assets/theme/Colors';
+import LottieView from 'lottie-react-native';
+import assets from '../../../assets';
 const Language = () => {
     return (
-        <View style={styles.container}>
-            <Text>MyComponent</Text>
-        </View>
+        <View style={styles.header} >      
+        <LottieView
+          loop
+          source={assets.lottieFiles.planePath}
+          colorFilters={[{keypath: 'Plane', color: 'rgb(255, 100, 0)'}]}
+        />
+      </View>
     );
 };
 
-// define your styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -19,6 +23,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#2c3e50',
     },
+    header: {
+        height: 80,
+        width: '100%',
+        backgroundColor: 'rgb(255, 255, 255)',
+        alignItems: 'stretch',
+        justifyContent: 'center',
+        zIndex: 1,
+      },
 });
 
 //make this component available to the app

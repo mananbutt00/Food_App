@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, TextInput, Modal, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, TextInput, Modal, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform,TouchableWithoutFeedback,Keyboard, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '../Assets/theme/Colors';
 const ProfileScreen = () => {
@@ -58,7 +58,13 @@ const ProfileScreen = () => {
   }
 
   return (
+    <KeyboardAvoidingView
+
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={styles.container}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>  
     <ScrollView contentContainerStyle={styles.container}>
+      
       <View style={styles.flex1}>
         <View style={styles.profilePictureContainer}>
           <Image source={require('../Images/profilepicture.png')} style={styles.profilePicture} />
@@ -67,6 +73,8 @@ const ProfileScreen = () => {
       </View>
 
       <View style={styles.flex2}>
+
+        
         <View style={styles.inputContainer}>
           <Text style={styles.text}>User Name</Text>
           <TextInput placeholder="Enter your username" style={styles.input} />
@@ -80,16 +88,22 @@ const ProfileScreen = () => {
           <Text style={styles.text}>Mobile Number</Text>
           <TextInput placeholder="Enter your mobile number" style={styles.input} />
         </View>
+      
+    
       </View>
 
       <View style={styles.flex3}>
         <TouchableOpacity style={styles.button} onPress={() => setOpenModal(true)}>
-          <Image source={require('../Images/editprofilebutton.png')} />
+          <Image source={require('../Images/editprofilebutton.png')}
+           />
         </TouchableOpacity>
         {renderModal()}
         {renderModal2()}
       </View>
+
     </ScrollView>
+    </TouchableWithoutFeedback>
+</KeyboardAvoidingView>
   );
 };
 
@@ -158,20 +172,31 @@ const styles = StyleSheet.create({
     fontFamily: 'lora',
   },
   button: {
-    bottom: 20,
+    bottom: 80,
+
   },
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  
   },
   modalContent: {
     flex: 0.5,
     backgroundColor: 'white',
     padding: 25,
     width: 300,
-    borderRadius: 10,
+    borderRadius: 20,
     height: 50,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 8,
+      height: 9,
+    },
+    shadowOpacity: 0.9,
+    shadowRadius: 3.62,
+    elevation: 15,
+ 
   },
   closeButton: {
     alignItems: 'flex-end',

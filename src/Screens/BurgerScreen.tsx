@@ -246,20 +246,59 @@ function BurgerScreen({ route }) {
           </View>
           <Text style={styles.priceText}>{item.price}</Text>
         </View>
-        <View style={styles.cartContainer}>
+        {/* <View style={styles.cartContainer}>
           <View style={styles.rowContainer}>
-            <TouchableOpacity style={styles.iconContainer} onPress={add}>
-              <Icon size={30} name={'plus-square-o'} color={'black'} />
+       
+
+           
+             <TouchableOpacity style={styles.iconContainer} onPress={add}>
+            <Icon size={30} name={'minus-square-o'} color={'black'} />
             </TouchableOpacity>
+      
+
             <Text style={styles.countText}>{count}</Text>
+
             <TouchableOpacity style={styles.iconContainer} onPress={minus}>
               <Icon size={30} name={'minus-square-o'} color={'black'} />
-            </TouchableOpacity>
+            </TouchableOpacity> 
+            </View>
+
+            
           </View>
           <TouchableOpacity>
             <Image source={require('../Images/CartButton.png')} style={styles.cartImage} />
-          </TouchableOpacity>
+          </TouchableOpacity> 
+
+
+        </View> */}
+        <View style={{flexDirection:'row', borderWidth: 1, borderRadius: 10, backgroundColor: '#D9D9D9', borderBlockColor: '#D9D9D9', width: 100,
+         height: 40, marginLeft: 20, borderLeftColor: '#D9D9D9', borderRightColor: '#D9D9D9', marginVertical: 20,alignItems:'center'}}>
+
+          <View style={{ borderWidth: 1, borderRadius: 5, backgroundColor: '#FAF9F6', borderBlockColor: '#FAF9F6', width: 30,
+           height: 30, borderLeftColor: '#FAF9F6', borderRightColor: '#FAF9F6', marginLeft: 5,justifyContent:'center'}}>
+
+            <TouchableOpacity onPress={add}>
+              {/* <Icon size={30} name={'minus-square-o'} color={'black'} /> */}
+              <Image
+                source={require('../Images/add.png')}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <Text style={{color:'black',fontSize:20,alignItems:'center',marginLeft:5}}>{count}</Text> 
+
+          <View style={{ borderWidth: 1, borderRadius: 5, backgroundColor: '#FAF9F6', borderBlockColor: '#FAF9F6', width: 30, height: 30, borderLeftColor: '#FAF9F6', borderRightColor: '#FAF9F6', marginLeft: 10 }}>
+          <TouchableOpacity onPress={minus}>
+              {/* <Icon size={30} name={'minus-square-o'} color={'black'} /> */}
+              <Image
+                source={require('../Images/minus.png')}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
+        <TouchableOpacity>
+            <Image source={require('../Images/CartButton.png')} style={styles.cartImage} />
+          </TouchableOpacity> 
       </View>
     );
   };
@@ -283,7 +322,7 @@ function BurgerScreen({ route }) {
         tabBarInactiveTintColor: 'black',
         tabBarScrollEnabled: true,
         tabBarStyle: {
-         
+
         }
 
       }}
@@ -312,6 +351,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: Colors.white,
+    margin:5
   },
   flex1: {
     flex: 0.6,
@@ -341,7 +381,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontSize: 25,
     fontWeight: 'bold',
-   paddingLeft:15,
+    paddingLeft: 15,
     fontFamily: 'merriblack',
   },
   titleText: {
@@ -373,21 +413,22 @@ const styles = StyleSheet.create({
   },
   cartContainer: {
     flexDirection: 'row',
-    padding:10
+
+    backgroundColor: ''
   },
   iconContainer: {
-    backgroundColor: Colors.white,
-    marginVertical: -10,
+    backgroundColor: '#D9D9D9',
+
   },
   countText: {
     fontSize: 20,
     marginHorizontal: 5,
-    backgroundColor:Colors.white,
-    marginVertical: -10,
+    backgroundColor: '#D9D9D9',
+
   },
   cartImage: {
-    marginHorizontal: 70,
-    bottom: 20,
+    marginHorizontal: 180,
+    bottom: 60,
   },
   subContainer: {
     flex: 1,

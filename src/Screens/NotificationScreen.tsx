@@ -5,6 +5,7 @@ function NotificationScreen() {
         return (
                 <ScrollView>
                         <View style={styles.container}>
+                                
                                 <View style={styles.flex1}>
 
                                         <View style={styles.offerContainer}>
@@ -45,8 +46,9 @@ function NotificationScreen() {
                                                 </View>
                                         </View>
                                 </View>
+                                
                         </View>
-                </ScrollView>
+                        </ScrollView>
         );
 }
 
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
                 alignItems: 'center'
         },
         flex3: {
-                flex: 0.5,
+                flex: 0.53,
                 justifyContent: 'center',
         },
         notificationBox: {
@@ -81,7 +83,8 @@ const styles = StyleSheet.create({
                 width: 300,
                 height: 400,
                 borderRadius: 30,
-                padding: 5
+                padding: 5,
+                marginVertical:20
         },
         notificationRow: {
                 flexDirection: 'row',
